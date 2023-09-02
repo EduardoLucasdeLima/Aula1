@@ -1,7 +1,9 @@
-﻿using Microsoft.AspNetCore.Mvc;
-using SalesWebMVC.Models;
+﻿using System;
+using System.Collections.Generic;
 using System.Diagnostics;
-using System.Reflection.Metadata.Ecma335;
+using System.Threading.Tasks;
+using Microsoft.AspNetCore.Mvc;
+using SalesWebMVC.Models.ViewModels;
 
 namespace SalesWebMVC.Controllers
 {
@@ -18,7 +20,14 @@ namespace SalesWebMVC.Controllers
         {
             return View();
         }
-       
+        
+        public IActionResult About()
+        {
+            ViewData["Message"] = "APP DE VENDAS.";
+            ViewData["Aluno"] = "Eduardo Lucas";
+            return View();
+        }
+
         
         public IActionResult Privacy()
         {
@@ -28,7 +37,7 @@ namespace SalesWebMVC.Controllers
         [ResponseCache(Duration = 0, Location = ResponseCacheLocation.None, NoStore = true)]
         public IActionResult Error()
         {
-            return View(new ErrorViewModel { RequestId = Activity.Current?.Id ?? HttpContext.TraceIdentifier });
+            return View(new SalesWebMVC.Models.ViewModels.ErrorViewModel { RequestId = Activity.Current?.Id ?? HttpContext.TraceIdentifier });
         }
     }
 }
