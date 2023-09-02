@@ -1,6 +1,7 @@
 ﻿using Microsoft.AspNetCore.Mvc;
 using SalesWebMVC.Models;
 using System.Diagnostics;
+using System.Reflection.Metadata.Ecma335;
 
 namespace SalesWebMVC.Controllers
 {
@@ -17,7 +18,8 @@ namespace SalesWebMVC.Controllers
         {
             return View();
         }
-
+       
+        
         public IActionResult Privacy()
         {
             return View();
